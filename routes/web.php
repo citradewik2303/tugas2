@@ -11,8 +11,16 @@
 |
 */
 
+
+
+
 Route::get('kategori/{id}', function ($id) {
-    return "hello user with id".$id;
+    return "hello user with id " .$id ;
 });
 
-Route::resource('kategori','KategoriController')->except(['destroy']);
+
+Route::get('dashboard', function () {
+    return view('dashboard/index');
+});
+//Route::resource('kategori','KategoriController');
+Route::resource('kategori','KategoriController')->except(['delete','destroy']) ;
